@@ -1,0 +1,93 @@
+@import '../GlobalVariable.scss';
+@mixin card(){
+    display: flex;
+    justify-content: space-evenly;
+    background-color:$bg-color;
+    border-radius:20px;
+    box-shadow:3px 4px 5px grey;
+    margin:auto;
+}
+
+.main{
+    color:$text-color;
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    
+
+    &-lower{
+        padding: 25px;
+        @include card();
+        width:100%;
+        border-radius:0;
+        flex-direction: column;
+        letter-spacing: 1px;
+
+        .slider{
+            width:90%;
+            margin:auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+            span{
+                font-size:xx-large;
+                cursor: pointer;
+                transition:all 0.4s ease-in-out;
+            }
+            span:hover{
+                color:$secondary-color;
+                transform:scale(1.3)
+            }
+            img{
+                width:225px;
+                height:200px;
+                border-radius:45%;
+                border:solid 2px transparent;
+                transition:all 0.4s ease-in-out;
+                cursor: pointer;
+            }
+            img:hover{
+                border:solid 2px $secondary-color;
+            }
+        }
+    }
+    &-upper{
+        padding:30px 25px;
+        width:85%;
+        @include card();
+        nav{
+            span{
+                cursor: pointer;
+            }
+            span:hover{
+                color:$secondary-color;
+                text-decoration:underline;
+            }
+        }
+    }
+    &-meal{
+        border-left:dashed 2px grey;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+        padding-left:100px;
+
+        span{
+            border:solid 1px white;
+            overflow: hidden;
+        }
+        img{
+            width:420px;
+            height:300px;
+            transition:all 0.7s ease-in-out;
+            cursor: pointer;
+         
+        }
+        img:hover{
+            transform: scale(1.1);
+        }
+    }
+
+}

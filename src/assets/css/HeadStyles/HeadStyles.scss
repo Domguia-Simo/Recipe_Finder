@@ -1,0 +1,118 @@
+@import '../GlobalVariable.scss';
+
+body{
+    font-family:$font-family;
+    background-image:url('../../texture/t1.jpg');
+    background-repeat: repeat; 
+}
+
+#head{
+    width:100%;
+    height:$banner-height;
+    font-size:xx-large;
+}
+
+.banner{
+    width:100%;
+    height:fit-content;
+    
+
+    &-img{
+        width:100%;
+        height:$banner-height;
+        box-shadow:7px 8px 9px grey;
+
+    }
+}
+.head-aside{
+    position: absolute;
+    right:0;
+    font-size:smaller;
+    
+
+    span{
+        transition:all 0.2s ease-in-out;
+        cursor:pointer;
+        vertical-align: middle;
+    }
+    span:hover{
+        color:$secondary-color;
+    }
+    button{
+        margin-left:20px;
+        padding:10px;
+        font-size:large;
+        border-radius:20px;
+        background-color: $secondary-color;
+        border:0;
+        margin-right:15px;
+        cursor: pointer;
+        transition:all 0.2s ease-in-out;
+        letter-spacing:2px;
+    }
+    button:hover{
+        background-color: white;
+    }
+}
+
+.head-information{
+    position:absolute;
+    color:$head-text-color;
+    width:100%;
+    margin:auto;
+    text-align: center;
+    padding-top:20px;
+}
+
+.links{
+    width:50%;
+    margin:auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom:115px;
+}
+.link{
+    font-weight: lighter;
+    font-style: italic;
+    text-decoration: none;
+    color:$head-text-color;
+    text-decoration: underline;
+    transition:all 0.2s ease-in-out;
+}
+.link:hover{
+    color:$secondary-color;
+}
+.search-bar{
+    width:50%;
+    margin:auto;
+    border:solid 1px grey;
+    background-color:rgba(250,250,250,0.8);
+    margin-bottom:30px;
+    height:50px;
+    padding:3px;
+    transition:all 0.5s ease-in-out;
+
+    input[type="text"]{
+        width:95%;
+        height:100%;
+        float:left;
+        background:transparent;
+        border:0;
+        color:black;
+        font-size:large;
+        letter-spacing: 2px;
+        text-indent: 15px;
+        outline:none;
+    }
+
+    span{
+        // float:right;
+        font-size:xx-large;
+        color:rgb(66, 57, 57);
+        margin-top:3px;
+    }
+}
+.search-bar:focus-within{
+    background-color:rgba(250,250,250,0.9);
+
+}

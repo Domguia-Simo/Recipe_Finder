@@ -1,0 +1,11 @@
+@import '../GlobalVariable.scss';
+
+.foot{
+    width:100%;
+    padding:10px;
+    margin:auto;
+    background:linear-gradient(45deg ,grey,$bg-color ,white,grey);
+    text-align: center;
+    letter-spacing: 2px;
+}
+

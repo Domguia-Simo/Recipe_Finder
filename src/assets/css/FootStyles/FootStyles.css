@@ -1,0 +1,9 @@
+.foot {
+  width: 100%;
+  padding: 10px;
+  margin: auto;
+  background: linear-gradient(45deg, grey, whitesmoke, white, grey);
+  text-align: center;
+  letter-spacing: 2px;
+}
+/*# sourceMappingURL=FootStyles.css.map */
