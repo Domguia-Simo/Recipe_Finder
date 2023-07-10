@@ -48,7 +48,7 @@ function SearchBar(){
         <React.Fragment>
             <form methos="post" action="">
                 <div className="search-bar" title="Search">
-                    <input type="text" placeholder="Search for the recipe of your favorite meals ..." />
+                    <input type="text" placeholder="Search the recipe of your favorite meals ..." />
                     <span className="fas fa-search"></span>
                 </div>
             </form>

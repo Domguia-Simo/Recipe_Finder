@@ -1,9 +1,42 @@
 .foot {
+  color: white;
   width: 100%;
   padding: 10px;
   margin: auto;
-  background: linear-gradient(45deg, grey, whitesmoke, white, grey);
+  background: linear-gradient(8deg, goldenrod -20%, black, #282828, #b4b4b4);
   text-align: center;
   letter-spacing: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.foot .upper-foot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .foot .upper-foot {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 25px;
+  }
 }
 /*# sourceMappingURL=FootStyles.css.map */

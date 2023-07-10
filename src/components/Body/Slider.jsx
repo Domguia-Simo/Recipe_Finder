@@ -26,7 +26,7 @@ function Slider(){
                     
             <span className="fas fa-chevron-right"></span>        
             </div><br/><br/>
-            <center><h1
+            <center className="radio"><h1
             style={{
                 display:"flex",
                 width:"15%",

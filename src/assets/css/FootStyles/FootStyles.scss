@@ -1,11 +1,33 @@
 @import '../GlobalVariable.scss';
 
 .foot{
+    color:white;
     width:100%;
     padding:10px;
     margin:auto;
-    background:linear-gradient(45deg ,grey,$bg-color ,white,grey);
+    background:linear-gradient(8deg ,$secondary-color -20% ,rgb(0,0,0) ,rgb(40,40,40)  ,rgb(180,180,180) );
     text-align: center;
     letter-spacing: 2px;
+    display:flex;
+    flex-direction: column;
+    .upper-foot{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-evenly;
+        padding-top:20px;
+    }
+}
+
+@media only screen and (max-width:"600px"){
+    .foot{
+
+        .upper-foot{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 25px;
+        }
+    }
+    
 }
 

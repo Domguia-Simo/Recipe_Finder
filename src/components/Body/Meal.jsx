@@ -4,16 +4,24 @@ function Meal(){
     return(
         <React.Fragment>
             <div className="main-meal">
-               <span><img src={require('../../assets/images/f10.jpg')} /></span> 
-               <span><img src={require('../../assets/images/f12.jpg')} /></span> 
-               <span><img src={require('../../assets/images/f4.jpg')} /></span> 
-               <span><img src={require('../../assets/images/f7.jpg')} /></span> 
+               <span className="meal"><img src={require('../../assets/images/f10.jpg')} /><br/><br/>
+               Lorem ipsum dolor sit amet consectetur adipisicing .
+                Quaerat sapiente molestias tempore inventore offici</span> 
+               <span className="meal"><img src={require('../../assets/images/f12.jpg')} /><br/><br/>
+               Lorem ipsum dolor sit amet consectetur adipisicing .
+                Quaerat sapiente molestias tempore inventore offici</span> 
+                <span className="meal"><img src={require('../../assets/images/f4.jpg')} /><br/><br/>
+                Lorem ipsum dolor sit amet consectetur adipisicing .
+                Quaerat sapiente molestias tempore inventore offici</span> 
+               <span className="meal"><img src={require('../../assets/images/f7.jpg')} /><br/><br/>
+               Lorem ipsum dolor sit amet consectetur adipisicing .
+                Quaerat sapiente molestias tempore inventore offici</span> 
                <div style={{
                     fontSize:"large",
                     
                 
                }}>
-                   prev<span className="fas fa-chevron-left" style={{
+                   <span className="fas fa-chevron-left" style={{
                        border:"solid 1px grey",
                        borderRadius:"50%",
                        padding:"15px",
@@ -27,7 +35,7 @@ function Meal(){
                         padding:"15px",
                         marginLeft:"25px",
                         cursor:"pointer"
-                   }}></span>next
+                   }}></span>
                </div>
                <div>
                 <h3 style={{float:"right"}}>Total Result : 04 </h3>

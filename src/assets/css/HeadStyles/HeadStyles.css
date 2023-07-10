@@ -128,4 +128,51 @@ body {
 .search-bar:focus-within {
   background-color: rgba(250, 250, 250, 0.9);
 }
+
+@media only screen and (max-width: 600px) {
+  #head {
+    font-size: smaller;
+    height: 300px;
+  }
+  .banner-img {
+    height: 300px;
+  }
+  .head-aside span {
+    display: none;
+  }
+  .head-aside button {
+    font-size: small;
+    font-weight: bold;
+    margin-top: -10px;
+    margin-right: 5px;
+    padding: 7px;
+  }
+  .links {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .link {
+    font-style: normal;
+    font-size: large;
+    font-weight: bold;
+  }
+  .search-bar {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 20px;
+  }
+  .search-bar input[type="text"] {
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: small;
+    text-indent: 5px;
+  }
+  .search-bar span {
+    display: none;
+  }
+  .banner-text {
+    font-size: x-large;
+  }
+}
 /*# sourceMappingURL=HeadStyles.css.map */

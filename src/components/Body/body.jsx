@@ -11,6 +11,7 @@ function Body(){
             <div className="main">
 
                 <div className="main-upper">
+                
                     <RecipeType/>
                     <Meal/>
                 </div>
