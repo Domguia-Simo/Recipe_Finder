@@ -1,4 +1,4 @@
-@import '../GlobalVariable.scss';
+@import '../_GlobalVariable.scss';
 @mixin card(){
     display: flex;
     justify-content: space-evenly;
@@ -103,6 +103,218 @@
 
 }
 
+//Responsive design for medium screen devices with width > 1200px but < 1400px
+@media only screen and (max-width:"1400px"){
+
+    .main{
+
+        &-lower{
+
+            .slider{ 
+                span{
+
+                }
+
+                img{
+
+                }
+
+            }
+        }
+        &-upper{
+
+            nav{
+                text-indent:20px;
+                display:flex;
+                flex-direction:column;
+                letter-spacing:2px;
+                font-size:x-large;
+                line-height:35px;
+                padding-right:25px;
+    
+                span{
+                }
+
+            }
+        }
+        &-meal{
+            border-left:dashed 2px grey;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 50px;
+            grid-row-gap: 50px;
+            padding-left:40px;
+    
+            .meal{
+                width:380px;
+                height:250px;
+                border:solid 1px white;
+                overflow: hidden;
+                
+            }
+            img{
+
+            }
+
+        }
+    
+    }   
+    
+}
+
+//Responsive design for medium screen devices with width > 900px but < 1200px
+@media only screen and (max-width:"1200px"){
+
+    .meal-type{
+        display: none;  
+    }
+        .main{
+            font-size:small;
+        
+            &-lower{
+                padding: 25px;
+                width:100%;
+                border-radius:0;
+                flex-direction: column;
+                letter-spacing: 1px;
+        
+                .slider{
+                    margin:auto;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-column-gap: 35px;
+                    grid-row-gap: 35px;
+                    div{
+                        text-align: center;
+                    }         
+                    span{
+                        display: none;
+                    }
+    
+                    img{
+                        width:140px;
+                        height:140px;
+                        border-radius:50%;  
+                    }
+    
+                }
+                .radio{
+                    display: none;
+                }
+            }
+            &-upper{
+                width:100%;
+                border-radius: 0px;
+                nav{
+                    margin-right: 10px;
+                    text-indent:3px;
+                    letter-spacing:1px;
+                    font-size:large;
+                    line-height:40px;
+                    span{
+                        font-size:small;
+                    }
+                }
+            }
+            &-meal{
+                border-left:dashed 0px grey;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 90px;
+                grid-row-gap: 30px;
+                padding-left:0px;
+        
+                .meal{
+                    width:320px;
+                    height:270px;
+                    word-break: break-all;
+                }
+                img{
+                    width:100%;
+                    height:65%;
+                 
+                }
+            }
+        
+        }
+
+}
+
+//Responsive dedsign for mediu mobile screen with width > 600px and < 900px
+@media only screen  and (max-width:"900px"){
+    .meal-type{
+        display: none;  
+    }
+        .main{
+            font-size:small;
+        
+            &-lower{
+                padding: 25px;
+                width:100%;
+                border-radius:0;
+                flex-direction: column;
+                letter-spacing: 1px;
+        
+                .slider{
+                    margin:auto;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-column-gap: 35px;
+                    grid-row-gap: 35px;
+                    div{
+                        text-align: center;
+                    }         
+                    span{
+                        display: none;
+                    }
+    
+                    img{
+                        width:140px;
+                        height:140px;
+                        border-radius:50%;  
+                    }
+    
+                }
+                .radio{
+                    display: none;
+                }
+            }
+            &-upper{
+                width:100%;
+                border-radius: 0px;
+                nav{
+                    margin-right: 10px;
+                    text-indent:3px;
+                    letter-spacing:1px;
+                    font-size:large;
+                    line-height:40px;
+                    span{
+                        font-size:small;
+                    }
+                }
+            }
+            &-meal{
+                border-left:dashed 0px grey;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 55px;
+                grid-row-gap: 30px;
+                padding-left:0px;
+        
+                .meal{
+                    width:250px;
+                    height:200px;
+                    word-break: break-all;
+                }
+                img{
+                    width:100%;
+                    height:65%;
+                 
+                }
+            }
+        
+        }
+}
+
+ //Responsive deisgn for small mobile screen with width < 600px
 @media only screen and (max-width:"600px"){
 .meal-type{
     display: none;  
@@ -163,8 +375,8 @@
             padding-left:0px;
     
             .meal{
-                width:300px;
-                height:250px;
+                width:320px;
+                height:270px;
                 word-break: break-all;
             }
             img{

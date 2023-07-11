@@ -32,7 +32,10 @@ function Head(){
                     </div>
 
                 </div>
-
+                {/* //Floating menu for mobile view */}
+                        <div className="floating-menu">
+                            <span className="fas fa-hamburger"></span>
+                        </div>
                 <div className="banner">
                     <img src={require('../../assets/images/banner2.jpg')} className="banner-img" alt="Banner of the recipe finder website" />
                 </div>
@@ -49,7 +52,7 @@ function SearchBar(){
             <form methos="post" action="">
                 <div className="search-bar" title="Search">
                     <input type="text" placeholder="Search the recipe of your favorite meals ..." />
-                    <span className="fas fa-search"></span>
+                    <span className="fas fa-search" style={{display:"none"}}></span>
                 </div>
             </form>
         </React.Fragment>
