@@ -113,6 +113,10 @@
 }
 
 .main-meal {
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
   border-left: dashed 2px grey;
   display: -ms-grid;
   display: grid;
@@ -164,7 +168,7 @@
     display: grid;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
-    grid-column-gap: 50px;
+    grid-column-gap: 35px;
     grid-row-gap: 50px;
     padding-left: 40px;
   }

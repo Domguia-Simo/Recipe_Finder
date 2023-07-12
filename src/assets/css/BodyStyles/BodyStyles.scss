@@ -75,6 +75,7 @@
         }
     }
     &-meal{
+        user-select: text;
         border-left:dashed 2px grey;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -102,6 +103,8 @@
     }
 
 }
+
+
 
 //Responsive design for medium screen devices with width > 1200px but < 1400px
 @media only screen and (max-width:"1400px"){
@@ -141,7 +144,7 @@
             border-left:dashed 2px grey;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-column-gap: 50px;
+            grid-column-gap: 35px;
             grid-row-gap: 50px;
             padding-left:40px;
     
