@@ -8,7 +8,7 @@ function LandingPage(){
 
     function RecipeFromHead(data){
         console.log('At the landing page')
-console.log(recipe)
+console.log(data)
         setRecipe(data)
     }
 
@@ -16,7 +16,7 @@ console.log(recipe)
         <React.Fragment>
             <Head moveUpData={RecipeFromHead}/><br/>
             <Body recipe={recipe}/><br/>
-            <Foot/><br/>
+            <Foot/>
         </React.Fragment>
     )
 }

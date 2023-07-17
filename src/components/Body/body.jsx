@@ -5,14 +5,14 @@ import Slider from './Slider.jsx'
 import DisplayRecipe from './DisplayRecipe.jsx'
 import '../../assets/css/BodyStyles/BodyStyles.css'
 
-function Body({recipe}){
+function Body({recipe}){ 
     const [selected ,setSelectedMeal] = useState(0)
 
     function selectedMeal(meal){
         setSelectedMeal(meal)
     }
 
-    if(selected == 0){
+    if((selected == 0 && recipe[0] != 404 && recipe[0] != 400 ) || (selected == 1 && recipe != [])){
         return(
             <React.Fragment>
                 <br/><br/>
@@ -43,7 +43,7 @@ function Body({recipe}){
                 <div className="main">
     
                     <div className="main-upper">
-                      <DisplayRecipe meal={selected}/>
+                      <DisplayRecipe meal={selected} status ={recipe[0]}/>
                     </div>
     
                     <br/><br/>

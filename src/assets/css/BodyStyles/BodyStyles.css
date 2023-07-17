@@ -132,6 +132,7 @@
   height: 300px;
   border: solid 1px white;
   overflow: hidden;
+  text-align: center;
 }
 
 .main-meal img {
@@ -140,11 +141,6 @@
   -webkit-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
   cursor: pointer;
-}
-
-.main-meal img:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
 }
 
 @media only screen and (max-width: 1400px) {
@@ -175,7 +171,7 @@
   .main-meal .meal {
     width: 380px;
     height: 250px;
-    border: solid 1px white;
+    border: solid 1px transparent;
     overflow: hidden;
   }
 }

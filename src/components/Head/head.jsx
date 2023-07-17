@@ -5,7 +5,11 @@ import '../../assets/fontawesome/css/all.css'
 function Head({moveUpData}){
 
     function temp(data){
-        moveUpData(data)
+        if(data.length != 0){
+            moveUpData(data)
+        }else{
+            moveUpData([])
+        }
     }
 
     return(
@@ -32,9 +36,6 @@ function Head({moveUpData}){
                         <SearchBar moveResult={temp}/>
                     </div>
 
-                    <div className="banner-text">
-                        Discover the secrets of the<br/> most delicious meals <span className="fas fa-smile" style={{color:"yellow"}}></span>
-                    </div>
 
                 </div>
                 {/* //Floating menu for mobile view */}
@@ -53,52 +54,80 @@ export default Head;
 
 function SearchBar({moveResult}){
 
-    const [submit ,setSubmit] = useState(0)
+    let [submit ,setSubmit] = useState(0)
 
     const [meal ,setMeal] = useState('')
-    const [result ,setResult] = useState()
+    const [result ,setResult] = useState([])
+
+    const [loading ,setLoading] = useState(false)
 
    //function called when the input text is changed
     function handleChange(e){
-        let temp;
-        temp = e.target.value
-        setMeal(temp)
+        setMeal(e.target.value)
     }
+
+    //Retreiving information from a Recipe API  
+    useEffect(()=>{
+        if(submit != 0){
+            setLoading(true)
+            fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`)
+            .then(res => res.json())
+            .then(data => {
+                let ArrangedData =[]
+                
+                    if(data.meals[0] == undefined){
+                        ArrangedData = []
+                    }else{
+                        let length
+                             if(data.meals.length >= 10){
+                               length=8
+                            }
+                            console.log(length)
+
+                        for(let i=0;i<length;i++){
+                            ArrangedData.push(data.meals[i])
+              
+                        }
+                    }
+                    console.log("The arranged Data is :")
+                    console.log(ArrangedData)
+                    setResult(ArrangedData)
+                    setLoading(false)
+                    if(ArrangedData == []){
+                        moveResult([400])
+                    }else{
+                        moveResult(ArrangedData)
+                    }
+            })
+            .catch(err =>{
+                console.log("The error is : ")
+                console.error(err.message)
+                if(err.message == "Failed to fetch"){ moveResult([404])}
+                else{moveResult([400])}
+                // if(submit != 0)
+               
+                setLoading(false)
+            } )
+
+        }
+        if(submit != 0)
+        setSubmit(0)
+    },[submit])
+
     //function called when the form is submitted
     function handleSubmit(e){
         e.preventDefault()
-        if(meal.length > 2){
-            setSubmit(!submit)
-            // console.log(result)
-            moveResult(result)
-        }else if(meal == ''){
+        e.target[0].blur()
+            
+        if(meal == ''){
+            e.preventDefault()
             moveResult([])
-        }
+        }else{
+            setSubmit(submit+1)
+            console.log(meal)      
+          }
     }
 
-    //Retreiving information from a Recipe API
-    useEffect(()=>{
-        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`)
-        .then(res => res.json())
-        .then(data => {
-            let ArrangedData =[]
-            
-                for(let i=0;i<data.meals.length;i++){
-                    ArrangedData.push(data.meals[i])
-                    if(data.meals.length >= 4){
-                       break;
-                    }
-                }
-                // console.log("The arranged Data is :")
-                // console.log(ArrangedData)
-            setResult(ArrangedData)
-        })
-        .catch(err =>{
-            console.log("The error is : ")
-            console.error(err)
-            moveResult([])
-        } )
-    },[submit])
 
     return(
         <React.Fragment>
@@ -113,7 +142,16 @@ function SearchBar({moveResult}){
                     />
                     <span className="fas fa-search" style={{display:"none"}}></span>
                 </div>
+                
             </form>
+            
+            <div className="banner-text">
+                        Discover the secrets of the<br/> most delicious meals <span className="fas fa-smile" style={{color:"yellow"}}></span>
+            </div><br/>
+
+             {loading ? <img style={{marginTop:"-20px"}}src={require('../../assets/images/R2.gif')} height="25px"/>:''}
+
+<br/>
         </React.Fragment>
     );
 }
